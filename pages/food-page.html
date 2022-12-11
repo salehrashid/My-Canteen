@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- boxicon -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="../styles/food-page.css">
+    <title>Foods</title>
+</head>
+<body>
+<div id="preloader">
+    <div id="status"></div>
+</div>
+
+<nav class="navbar shadow sticky-top navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <button class="btn btn-light btn-sm" id="button-toggle">
+                <i class='bx bxs-right-arrow-alt bx-md' id="icon"></i>
+            </button>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" style="height: 30px; width: 50px" id="switch"
+                               checked>
+                        <label class="form-check-label mt-2 text-light" for="switch"><i class='bx bxs-moon bx-sm'
+                                                                                        style="margin-left: 10px"
+                                                                                        id="label-mode"></i></label>
+                    </div>
+                </li>
+            </ul>
+            <form class="d-lg-flex m-auto me-lg-2">
+                <button class="btn btn-outline-light" id="logout" type="button">Logout</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="sidebar shadow p-4 bg-light" id="sidebar">
+    <img src="https://avatars.githubusercontent.com/u/88997056?v=4" height="100"
+         class="rounded-circle d-block mx-auto align-text-top" alt="">
+    <ul>
+        <li>
+            <a class="text-primary" href="#">
+                <i class='bx bx-home'></i>Home
+            </a>
+        </li>
+        <li>
+            <a class="text-primary" href="suggestion-page.html">
+                <i class='bx bxl-discourse'></i>Suggestion
+            </a>
+        </li>
+        <li>
+            <a class="text-primary" href="food-page.html">
+                <i class='bx bx-baguette'></i>Foods
+            </a>
+        </li>
+        <li>
+            <a class="text-primary" href="appetizer-page.html">
+                <i class='bx bxs-popsicle'></i>Appetizer
+            </a>
+        </li>
+        <li>
+            <a class="text-primary" href="branch-page.html">
+                <i class='bx bx-git-branch'></i>Branch
+            </a>
+        </li>
+        <li>
+            <a class="text-primary" href="owner-page.html">
+                <i class='bx bxs-face'></i>Owner
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="p-4" id="main-content">
+    <div class="container">
+        <h1 class="h1 text-center text-primary" id="text-mode">Main Course</h1>
+        <ul class="nav nav-pills mb-3 d-flex justify-content-evenly" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-indonesia" type="button" role="tab" aria-controls="pills-indonesia"
+                        aria-selected="true">Indonesia
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-western"
+                        type="button" role="tab" aria-controls="pills-western" aria-selected="false">Western
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+
+            <!-- indonesia tab -->
+            <div class="tab-pane fade show active" id="pills-indonesia" role="tabpanel"
+                 aria-labelledby="pills-indonesia-tab" tabindex="0">
+
+                <!-- First row -->
+                <div class="row mb-5">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/roti.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Roti Telor</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#roti" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="roti">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-roti">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-roti" tabindex="-1"
+                                     aria-labelledby="modalLabelRoti" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelRoti">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Roti" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal-roti">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/naskun.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nasi Kuning</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#naskun" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="naskun">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-naskun">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-naskun" tabindex="-1"
+                                     aria-labelledby="modalLabelNaskun" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelNaskun">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-naskun"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Nasi_kuning_(Indonesia)"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/rendang.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Rendang</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#rendang" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="rendang">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-rendang">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-rendang" tabindex="-1"
+                                     aria-labelledby="modalLabelRendang" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelRendang">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-rendang"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Rendang"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/telor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Telor Ceplok</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#telor" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="telor">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-telor">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-telor" tabindex="-1"
+                                     aria-labelledby="modalLabelTelor" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelTelor">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-telor"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Telur_mata_sapi"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row -->
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/geprek.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Ayam Geprek Bensu</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#geprek" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="geprek">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-geprek">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-geprek" tabindex="-1"
+                                     aria-labelledby="modalLabelGeprek" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelGeprek">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-geprek"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Ayam_geprek"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/kwetiau.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Kwetiau Goreng</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#kwetiau" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="kwetiau">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-kwetiau">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-kwetiau" tabindex="-1"
+                                     aria-labelledby="modalLabelKwetiau" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelKwetiau">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-kwetiau"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Kwetiau_goreng"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/oreg.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tempe Oreg</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#oreg" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="oreg">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-oreg">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-oreg" tabindex="-1"
+                                     aria-labelledby="modalLabelOreg" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelOreg">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-oreg"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.bango.co.id/resep/detail/orek-tempe"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/indonesia/mie.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Mie Goreng</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#mie" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="mie">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-mie">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-mie" tabindex="-1"
+                                     aria-labelledby="modalLabelMie" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelMie">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-mie"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://id.wikipedia.org/wiki/Mi_goreng"
+                                                        width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- western tab -->
+            <div class="tab-pane fade" id="pills-western" role="tabpanel" aria-labelledby="pills-western-tab"
+                 tabindex="0">
+
+                <!-- First row -->
+                <div class="row mb-5">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/burger.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Burger King</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#ayam" role="button"
+                                       aria-expanded="false" aria-controls="collapseExample">
+                                        ....
+                                    </a>
+                                <div class="collapse" id="ayam">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-burger">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-burger" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabelBurger">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-burger"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/tacos.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tacos</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#tacos" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="tacos">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-tacos">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-tacos" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal-tacos">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/steak.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Steak Sapi</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#steak" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="steak">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-steak">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-steak" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal-steak"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/spagetti.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Spagetti</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#spagetti"
+                                       aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="spagetti">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row -->
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/pizza.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Pizza</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#pizza" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="pizza">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/macaroni.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Macaroni</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#macaroni"
+                                       aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="macaroni">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/kentang.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">French Fries</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#kentang" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="kentang">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/foods/western/cordon-bleu.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Cordon Bleu</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.
+                                    <a class="text-dark" data-bs-toggle="collapse" href="#cordon" aria-expanded="false"
+                                       aria-controls="collapseExample" role="button">
+                                        ....
+                                    </a>
+
+                                <div class="collapse" id="cordon">
+                                    <b>Rp : 30.000</b>
+                                    <br>
+                                    <b>rating : </b>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                    <i class='bx bxs-star text-danger'></i>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                    Detail
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-cordon" tabindex="-1"
+                                     aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://boxicons.com/usage" width="750"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal-cordon">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer py-3 bg-primary">
+    <div class="container text-center">
+        <span class="text-light text-center">Copyright &copy; by <b>saleh rashid</b> <br> All right reserved</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossOrigin="anonymous"></script>
+
+<!-- boxicon -->
+<script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+
+<script src="../script/food-script.js"></script>
+</body>
+</html>
